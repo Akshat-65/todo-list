@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(./asset/image.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh ;
+}
+
+#date-time-container{
+    width: fit-content;
+    margin: 10px 10px auto auto ;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 2px 2px rgb(166, 116, 45);
+}
+
+#time{
+    display: block;
+    font-size: 1.2rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#date{
+    display: block;
+    font-weight: 500;
+    font-style: italic;
+}
+
+#heading{
+    font-size: 1.4rem;
+    text-align: center;
+    transition: all 1s ease;
+} 
+
+#heading:hover{
+    transform: scale(1.2);
+} 
+
+form{
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input,
+form button{
+    padding: 0.5rem;
+    font-size: 2rem;
+    border: none; 
+    background: white;
+}
+
+input:focus{
+    outline: none;
+}
+
+form button{
+    color: #2D5CFE;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form button:hover{
+    background:#2D5CFE;
+    color: white;
+}
+
+.tasks{
+    font-size: 1.5rem;
+    text-align: center;
+    color:rgb(3, 11, 24) ;
+    font-weight: 900;
+    letter-spacing: 0.1rem;
+    text-decoration: underline;
+}
+
+.todo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.todo-list{
+    min-width: 38%;
+    list-style: none;
+}
+
+.todo{
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem;
+    background: white;
+    color: black;
+    font-size: 1.5rem;
+    border-radius: 20px;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+.todo:hover{
+    box-shadow: 0px 0px 4px 4px rgb(127, 127, 137); 
+}
+
+.todo li{
+    flex: 1;
+}
+
+.delete-btn {
+    background: #2D5CFE;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 0px 20px 20px 0px;
+    opacity: 0;
+}
+
+.todo:hover .delete-btn {
+    background: #2D5CFE;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 20px 20px 20px 20px;
+    opacity: 1;
+}
+
+.completed-checkbox {
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+}
+
+.fa-trash {
+    pointer-events: none;
+}
+
+.completed{
+    text-decoration: line-through;
+    opacity: 0.6;
+    animation: checkAnimation 0.2s ease-in-out 1 alternate;
+}
+
+.delete-animation{
+    transform: scale(0.5) rotate(360deg);
+    opacity: 0;
+}
+
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    border: none;
+}
+
+.select {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+select {
+    color: #2D5CFE;
+    width: 10rem;
+    cursor: pointer;
+    padding: 1rem ;
+}
+
+.select::after{
+    content: "\25BC";
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    background: #2D5CFE;
+    cursor: pointer;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.select:hover::after{
+    background: white;
+    color: #2D5CFE;
+}
+
+@keyframes checkAnimation{
+    0%{
+        transform:rotate(2deg);
+    }
+    25%{
+        transform:rotate(-2deg);
+    }
+    50%{
+        transform:rotate(2deg);
+    }
+    100%{
+        transform:rotate(-2deg);
+    }
+}
